@@ -2,14 +2,23 @@ import React, { useState, useEffect } from "react";
 
 export default function MountingPhase() {
   const [color, setColor] = useState("I am Neo");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setColor("Welcome To Skcet");
-    }, 3000);
+    try {
+      const timer = setTimeout(() => {
+        setColor("Welcome To Skcet");
+      }, 3000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    } catch (err) {
+      setError(err.message);
+    }
   }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
