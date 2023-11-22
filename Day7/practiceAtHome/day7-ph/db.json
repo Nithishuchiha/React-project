@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Product A",
+      "description": "This is Product A",
+      "Price": "10.99"
+    }
+  ]
+}

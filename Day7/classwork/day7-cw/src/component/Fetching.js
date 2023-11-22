@@ -16,7 +16,7 @@ const Fetching = () => {
       <h1>fetching</h1>
       <ul>
         {data.map((item) => (
-          <li ke>{item.data}</li>
+          <li key={item.id}>{item.title}</li>
         ))}
       </ul>
     </div>
