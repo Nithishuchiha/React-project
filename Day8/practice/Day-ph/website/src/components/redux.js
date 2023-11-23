@@ -1,34 +1,35 @@
-import { createStore } from 'redux'
+//redux.js
+import { createStore } from "redux";
 
 export const addItem = (item) => ({
-  type: 'ADD_ITEM',
+  type: "ADD_ITEM",
   payload: item,
-})
+});
 
 export const removeItem = (index) => ({
-  type: 'REMOVE_ITEM',
+  type: "REMOVE_ITEM",
   payload: index,
-})
+});
 
 const initialState = {
-  items : []
-}
+  items: [],
+};
 
 const listReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_ITEM':
-      return { items: [...state.items, action.payload] }
-      case 'REMOVE_ITEM':
+    case "ADD_ITEM":
+      return { items: [...state.items, action.payload] };
+    case "REMOVE_ITEM":
       const newItems = [...state.items];
-      newItems.splice(action.payload,1);
+      newItems.splice(action.payload, 1);
       return {
         items: newItems,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-const store = createStore(listReducer)
+const store = createStore(listReducer);
 
-export default store
+export default store;
